@@ -23,7 +23,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 
@@ -36,6 +38,8 @@ registerLocaleData(en);
     FooterComponent,
     HeaderComponent,
     HomeComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ registerLocaleData(en);
     NzCardModule,
     NzTypographyModule,
     NzInputModule,
+    NzFormModule
+
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

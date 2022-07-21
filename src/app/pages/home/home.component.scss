@@ -1,13 +1,3 @@
-nz-layout {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-}
-
-nz-header {
-    background-color: transparent;
-}
-
 .row {
     width: 100%;
     background-color: transparent;
@@ -34,25 +24,12 @@ nz-header {
     text-align: right;
 }
 
-.righttxt  {
+.righttxt {
     text-align: left;
 }
-
-
-
 
 img {
     padding: 20px;
     height: auto;
     width: 60%;
-}
-
-app-footer {
-    position: absolute;
-    padding: 10px 10px 0px 10px;
-    bottom: 0;
-    width: 100%;
-    /* Height of the footer*/
-    height: 40px;
-    background: grey;
 }
