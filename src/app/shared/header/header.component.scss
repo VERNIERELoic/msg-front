@@ -1,0 +1,28 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    border: 0;
+    text-transform: uppercase;
+  }
+
+  button{
+    text-transform: uppercase;
+    color: rgb(85, 85, 85);
+    margin: 3px;
+    width: 150px;
+    background-color: transparent
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    
+  }

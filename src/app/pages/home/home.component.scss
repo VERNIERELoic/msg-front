@@ -1,0 +1,58 @@
+nz-layout {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+nz-header {
+    background-color: transparent;
+}
+
+.row {
+    width: 100%;
+    background-color: transparent;
+}
+
+.title h2,
+.title p {
+    text-align: center;
+    padding: 20px;
+    margin: 0px 0;
+    color: rgb(85, 85, 85);
+}
+
+.righttxt img {
+    float: left;
+    text-align: left;
+}
+
+.lefttxt img {
+    float: right;
+}
+
+.lefttxt {
+    text-align: right;
+}
+
+.righttxt  {
+    text-align: left;
+}
+
+
+
+
+img {
+    padding: 20px;
+    height: auto;
+    width: 60%;
+}
+
+app-footer {
+    position: absolute;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 40px;
+    background: grey;
+}
