@@ -26,8 +26,11 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ExploreComponent } from './pages/explore/explore.component';
 
 
 registerLocaleData(en);
@@ -40,6 +43,8 @@ registerLocaleData(en);
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    ContactComponent,
+    ExploreComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,10 @@ registerLocaleData(en);
     NzCardModule,
     NzTypographyModule,
     NzInputModule,
-    NzFormModule
+    NzFormModule,
+    ReactiveFormsModule,
+    NzAutocompleteModule,
+    NzSelectModule
 
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

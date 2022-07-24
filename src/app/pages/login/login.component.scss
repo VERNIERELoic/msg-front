@@ -1,13 +1,3 @@
-nz-layout {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-}
-
-nz-header {
-    background-color: transparent;
-}
-
 .login-form {
     max-width: 300px;
 }
@@ -22,4 +12,9 @@ nz-header {
 
 .login-form-button {
     width: 100%;
+}
+
+form {
+    margin-top: 100px;
+    margin: 0 auto; 
 }
