@@ -6,7 +6,14 @@ ul {
     background-color: transparent;
     border: 0;
     text-transform: uppercase;
+    box-shadow:0px 4px 4px rgb(0 0 0 /6%);
   }
+
+  // :host::ng-deep{
+  //   .anticon-arrow-right{
+  //     padding: 0 0 !important
+  //   }
+  // }
 
   button{
     text-transform: uppercase;

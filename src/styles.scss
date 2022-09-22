@@ -1,7 +1,11 @@
 @import "~locomotive-scroll/dist/locomotive-scroll.css";
 /* You can add global styles to this file, and also import other style files */
-body {
-    scroll-behavior: smooth;
-}
 
+// body {
+//     scroll-behavior: smooth;
+// }
+
+.cursor-pointer {
+    cursor: pointer;
+}
 
