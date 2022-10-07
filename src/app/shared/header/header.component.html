@@ -1,16 +1,22 @@
 <ul nz-menu nzMode="horizontal">
-    <li nz-menu-item nzSelected routerLink="/">
-        <i nz-icon nzType="home"></i>
-        Home
+    <li routerLink="/" nz-menu-item>
+        <span nz-icon nzType="home" nzTheme="outline"></span>
+        Accueil
     </li>
-    <li nz-menu-item nzEnable routerLink="contact">
-        <i nz-icon nzType="mail"></i>
-        Contact us
+    <li routerLink="/planning" nz-menu-item>
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        Reservations
     </li>
-    <li nz-menu-item nzEnable routerLink="explore">
-        <i nz-icon nzType="search"></i>
-        Explore
+    <li routerLink="contact" nz-menu-item>
+        <span nz-icon nzType="/contacts" nzTheme="outline"></span>
+        Nous contacter
     </li>
-    <li style="float:right; padding-right: 7px;"><button nz-button routerLink="register">Register</button></li>
-    <li style="float:right; padding-right: 7px;"><button nz-button routerLink="login" >Login</button></li>
+    <div class="user">
+        <li nz-menu-item>
+            <button routerLink="/login" nz-button nzType="primary"><span nz-icon nzType="user" nzTheme="outline"></span> Seconnecter</button>
+        </li>
+        <li nz-menu-item>
+            <button routerLink="/register" nz-button nzType="primary"><span nz-icon nzType="user-add" nzTheme="outline"></span>S'enregistrer</button>
+        </li>
+    </div>
 </ul>

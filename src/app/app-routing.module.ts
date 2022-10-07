@@ -24,7 +24,7 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
-    path: 'explore',
+    path: 'planning',
     component: ExploreComponent
   }
 ];

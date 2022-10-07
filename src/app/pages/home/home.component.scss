@@ -1,35 +1,29 @@
-.row {
-    width: 100%;
-    background-color: transparent;
+.logo {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100px;
+    width: auto;
 }
 
-.title h2,
-.title p {
+[nz-carousel-content] {
     text-align: center;
-    padding: 20px;
-    margin: 0px 0;
-    color: rgb(85, 85, 85);
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
 }
 
-.righttxt img {
-    float: left;
-    text-align: left;
+nz-carousel {
+    width: 95%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.lefttxt img {
-    float: right;
-}
-
-.lefttxt {
-    text-align: right;
-}
-
-.righttxt {
-    text-align: left;
-}
-
-img {
-    padding: 20px;
-    height: auto;
-    width: 60%;
+h3 {
+    color: #fff;
+    margin-bottom: 0;
+    user-select: none;
 }

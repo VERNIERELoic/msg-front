@@ -17,4 +17,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  array = ["image 1", "image 2", "image 3", "image 4"];
+
 }

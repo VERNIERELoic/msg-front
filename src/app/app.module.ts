@@ -31,6 +31,7 @@ import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ExploreComponent } from './pages/explore/explore.component';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 
 
 registerLocaleData(en);
@@ -65,7 +66,8 @@ registerLocaleData(en);
     NzFormModule,
     ReactiveFormsModule,
     NzAutocompleteModule,
-    NzSelectModule
+    NzSelectModule,
+    NzCarouselModule,
 
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

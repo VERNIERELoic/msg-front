@@ -1,25 +1,26 @@
+<app-header></app-header>
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
     <nz-form-item>
         <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
-        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Email invalide!">
             <input nz-input formControlName="email" id="email" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Mot de passe</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
             <input nz-input type="password" id="password" formControlName="password"
                 (ngModelChange)="updateConfirmValidator()" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired>Confirm Password</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired>Confirmer</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
             <input nz-input type="password" formControlName="checkPassword" id="checkPassword" />
             <ng-template #errorTpl let-control>
-                <ng-container *ngIf="control.hasError('required')">Please confirm your password!</ng-container>
+                <ng-container *ngIf="control.hasError('required')">Veuillez confirmer le mot de passe!</ng-container>
                 <ng-container *ngIf="control.hasError('confirm')">
-                    Two passwords that you enter is inconsistent!
+                    Les deux mots de passe ne correspondent pas!
                 </ng-container>
             </ng-template>
         </nz-form-control>
@@ -27,21 +28,21 @@
     <nz-form-item>
         <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname" nzRequired
             nzTooltipTitle="What do you want other to call you">
-            <span>Nickname</span>
+            <span>Prénom</span>
         </nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your nickname!">
             <input nz-input id="nickname" formControlName="nickname" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Téléphone</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']"
             nzErrorTip="Please input your phone number!">
             <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
                 <ng-template #addOnBeforeTemplate>
                     <nz-select formControlName="phoneNumberPrefix" class="phone-select">
-                        <nz-option nzLabel="+33" nzValue="+86"></nz-option>
-                        <nz-option nzLabel="+87" nzValue="+87"></nz-option>
+                        <nz-option nzLabel="+33" nzValue="+33"></nz-option>
+                        <nz-option nzLabel="+xxx" nzValue="+xxx"></nz-option>
                     </nz-select>
                 </ng-template>
                 <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
@@ -64,3 +65,4 @@
         </nz-form-control>
     </nz-form-item>
 </form>
+<app-footer></app-footer>

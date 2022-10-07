@@ -1,18 +1,3 @@
-<div class="scroll-container" data-scroll-container>
-    <nz-layout>
-        <nz-header>
-            <app-header></app-header>
-        </nz-header>
-        <nz-content>
-            <div #scrollContent>
-                <div class="container">
-                    <br />
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </nz-content>
-        <!-- <nz-footer>
-        <app-footer></app-footer> 
-        </nz-footer> -->
-    </nz-layout>
+<div #scrollContent data-scroll-container>
+    <router-outlet></router-outlet>
 </div>
