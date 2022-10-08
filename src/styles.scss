@@ -9,3 +9,11 @@
     cursor: pointer;
 }
 
+@font-face {
+    font-family: "opensens";
+    src: url(assets/fonts/OpenSans.ttf);
+}
+
+* {
+    font-family: "opensens";
+}

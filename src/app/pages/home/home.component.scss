@@ -1,4 +1,5 @@
 .logo {
+    padding-top: 10px;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -7,16 +8,19 @@
 }
 
 [nz-carousel-content] {
-    text-align: center;
-    height: 160px;
+    object-fit: fill;
+    height: 500px;
+    width: auto;
+    float: center;
     line-height: 160px;
-    background: #364d79;
+    background: #1890ff;
     color: #fff;
     overflow: hidden;
 }
 
 nz-carousel {
-    width: 95%;
+    padding-top: 10px;
+    width: 70%;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -26,4 +30,100 @@ h3 {
     color: #fff;
     margin-bottom: 0;
     user-select: none;
+}
+
+.card-title,
+.card-text {
+    color: rgb(255, 255, 255);
+}
+
+.card {
+    background: #4f4f4f;
+    opacity: 0.9;
+    margin-left: 20%;
+    box-shadow: rgb(0 0 0 / 5%) 0px 1px 2px 0px;
+    border: 1px solid rgb(77, 77, 77);
+    overflow: hidden;
+    height: 36em;
+    border-radius: 3px;
+}
+
+.card-body {
+    padding-left: 5px;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgb(77, 77, 77);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.planning {
+    background: #363637;
+    margin-bottom: 1px;
+}
+
+.cards {
+    display: inline;
+    padding: 10px;
+
+}
+
+.btn btn-primary {
+    background: #636363;
+
+}
+
+.row {
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+h2 {
+
+    color: black;
+
+}
+
+.bio {
+    padding-top: 2%;
+    margin-left: 15%;
+    width: 50%;
+}
+
+.map {
+    padding-top: 2%;
+    width: 300px;
+    height: auto;
+    margin-left: 15%;
+    display: inline-block;
+}
+
+.comment {
+    padding-top: 2%;
+    width: 300px;
+    height: auto;
+    margin-left: 15%;
+}
+
+.count {
+    padding-left: 8px;
+    cursor: auto;
+}
+
+.ant-comment-rtl .count {
+    padding-right: 8px;
+    padding-left: 0;
+}
+
+nz-comment-content {
+    width: 100%;
+}
+
+nz-footer {
+    background-color: transparent;
 }

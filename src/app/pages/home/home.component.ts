@@ -8,15 +8,30 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class HomeComponent implements OnInit {
 
-  options: AnimationOptions = {
-    path: '/assets/animations/discord.json',
-  };
-
   constructor() { }
 
   ngOnInit() {
   }
 
-  array = ["image 1", "image 2", "image 3", "image 4"];
+  images = ["./assets/images/carous1.jpeg", "image 2", "image 3", "image 4"];
 
+  team = [
+    ["Yass", "./assets/images/barberprofile.jpg", "description "],
+    ["Unknow", "./assets/images/barberprofile.jpg", "Desciption"],
+    ["Unknow", "./assets/images/barberprofile.jpg", "description"],
+  ];
+
+  likes = 0;
+  dislikes = 0;
+
+  like(): void {
+    this.likes = 1;
+    this.dislikes = 0;
+  }
+
+  dislike(): void {
+    this.likes = 0;
+    this.dislikes = 1;
+  }
 }
+

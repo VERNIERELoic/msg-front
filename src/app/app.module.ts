@@ -32,6 +32,8 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
+
 
 
 registerLocaleData(en);
@@ -68,7 +70,7 @@ registerLocaleData(en);
     NzAutocompleteModule,
     NzSelectModule,
     NzCarouselModule,
-
+    NzCommentModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

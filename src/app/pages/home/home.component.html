@@ -1,8 +1,45 @@
 <app-header></app-header>
 <img class="logo" src="../../../assets/images/logo.png">
 <nz-carousel nzAutoPlay>
-    <div nz-carousel-content *ngFor="let index of array">
-        <h3>{{ index }}</h3>
+    <div nz-carousel-content *ngFor="let index of images">
+        <img [src]=index>
     </div>
 </nz-carousel>
-<app-footer></app-footer>
+
+<div class="bio">
+    <h2>Qui suis-je ?</h2>
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+        literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+        College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+        going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum
+        comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
+        Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+    </p>
+</div>
+<div class="row">
+    <h2>Notre équipe</h2>
+    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div *ngFor="let barber of team" nz-col class="gutter-row" [nzSpan]="6">
+            <div class="card" style="width: 18rem;">
+                <img [src]="barber[1]" class="card-img-top">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title">{{ barber[0] }}</h3>
+                    <p class="card-text">{{ barber[2] }}</p>
+                    <button nz-button routerLink="/planning" nzType="primary" class="d-flex">RDV avec
+                        {{ barber[0] }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="map">
+    <h2>Localisation</h2>
+    <p>Nous somme localiser au xx RUE CUVIER, 69006 Lyon aux brotteaux. Ligne de metro arret ...</p>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.1781667451787!2d4.852670815860796!3d45.767619521166324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb7cd9bcb56b%3A0x9750b52112ec2937!2sMJD%20CUT%20Barber!5e0!3m2!1sen!2sfr!4v1665155998047!5m2!1sen!2sfr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<nz-footer>
+    <app-footer></app-footer>
+</nz-footer>
