@@ -5,18 +5,28 @@
     </li>
     <li routerLink="/explore" nz-menu-item>
         <span nz-icon nzType="calendar" nzTheme="outline"></span>
-        Reservations
+        Rendez-vous
     </li>
     <li routerLink="/contact" nz-menu-item>
         <span nz-icon nzType="mail" nzTheme="outline"></span>
         Nous contacter
     </li>
     <div class="user">
-        <li nz-menu-item>
-            <button routerLink="/login" nz-button nzType="primary"><span nz-icon nzType="user" nzTheme="outline"></span> Se connecter</button>
+        <li *ngIf="!(isLoggedIn | async)" nz-menu-item>
+            <button routerLink="/login" nz-button nzType="primary"><span nz-icon nzType="user"
+                    nzTheme="outline"></span>Se connecter</button>
         </li>
-        <li nz-menu-item>
-            <button routerLink="/register" nz-button nzType="primary"><span nz-icon nzType="user-add" nzTheme="outline"></span>S'enregistrer</button>
+        <li *ngIf="!(isLoggedIn | async)" nz-menu-item>
+            <button routerLink="/register" nz-button nzType="primary"><span nz-icon nzType="user-add"
+                    nzTheme="outline"></span>S'enregistrer</button>
+        </li>
+        <li *ngIf="(isLoggedIn | async)" nz-menu-item>
+            <button routerLink="/" nz-button nzType="primary"><span nz-icon
+                    nzType="user" nzTheme="outline"></span>{{ currentUser }}</button>
+        </li>
+        <li *ngIf="(isLoggedIn | async)" nz-menu-item>
+            <button routerLink="/login" nz-button nzType="primary" (click)="authService.logout()"><span nz-icon
+                    nzType="user" nzTheme="outline"></span>Se deconnecter</button>
         </li>
     </div>
 </ul>

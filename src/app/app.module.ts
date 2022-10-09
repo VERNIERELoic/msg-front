@@ -33,6 +33,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 
 
@@ -71,6 +72,7 @@ registerLocaleData(en);
     NzSelectModule,
     NzCarouselModule,
     NzCommentModule,
+    NzNotificationModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

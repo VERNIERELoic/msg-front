@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+
 
 @Component({
   selector: 'app-login',
@@ -9,24 +13,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   validateForm!: FormGroup;
 
-  submitForm(): void {
-    if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
-    } else {
-      Object.values(this.validateForm.controls).forEach(control => {
-        if (control.invalid) {
-          control.markAsDirty();
-          control.updateValueAndValidity({ onlySelf: true });
-        }
+  constructor(private fb: FormBuilder, private authService: AuthService,
+    private router: Router, private notificationService: NzNotificationService) { }
+
+  async login() {
+    await this.authService.login(this.validateForm.value)
+      .toPromise()
+      .then(() => {
+        this.router.navigate(['/']);
+        this.notificationService.success("Succès", "Connecté");
+      }).catch(() => {
+        this.notificationService.error("Erreur", "Les identifiants ne sont pas reconnus");
       });
-    }
   }
 
-  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      userName: [null, [Validators.required]],
+      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
       remember: [true]
     });
