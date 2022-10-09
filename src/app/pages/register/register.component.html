@@ -1,5 +1,5 @@
 <app-header></app-header>
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+<form nz-form [formGroup]="validateForm">
     <nz-form-item>
         <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Email invalide!">
@@ -26,42 +26,25 @@
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname" nzRequired
-            nzTooltipTitle="What do you want other to call you">
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname" nzRequired nzTooltipTitle="Votre prenom">
             <span>Prénom</span>
         </nz-form-label>
-        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your nickname!">
-            <input nz-input id="nickname" formControlName="nickname" />
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Merci d'entrer votre prenom!">
+            <input nz-input id="nickname" formControlName="name" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Téléphone</nz-form-label>
-        <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']"
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired>Téléphone</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phone']"
             nzErrorTip="Please input your phone number!">
-            <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-                <ng-template #addOnBeforeTemplate>
-                    <nz-select formControlName="phoneNumberPrefix" class="phone-select">
-                        <nz-option nzLabel="+33" nzValue="+33"></nz-option>
-                        <nz-option nzLabel="+xxx" nzValue="+xxx"></nz-option>
-                    </nz-select>
-                </ng-template>
-                <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
-            </nz-input-group>
+
+            <input formControlName="phone" id="'phone'" nz-input />
+
         </nz-form-control>
     </nz-form-item>
     <nz-form-item nz-row class="register-area">
         <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <label nz-checkbox formControlName="agree">
-                <span>
-                    I have read the
-                    <a>agreement</a>
-                </span>
-            </label>
-        </nz-form-control>
-    </nz-form-item>
-    <nz-form-item nz-row class="register-area">
-        <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <button nz-button nzType="primary">Register</button>
+            <button nz-button nzType="primary" type="submit" (click)="register()">Créer mon compte</button>
         </nz-form-control>
     </nz-form-item>
 </form>
