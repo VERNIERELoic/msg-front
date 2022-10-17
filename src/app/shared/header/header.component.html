@@ -3,7 +3,11 @@
         <span nz-icon nzType="home" nzTheme="outline"></span>
         Accueil
     </li>
-    <li routerLink="/explore" nz-menu-item>
+    <li *ngIf="!(isLoggedIn | async)" routerLink="/login" nz-menu-item>
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        Rendez-vous
+    </li>
+    <li *ngIf="(isLoggedIn | async)" routerLink="/planning" nz-menu-item>
         <span nz-icon nzType="calendar" nzTheme="outline"></span>
         Rendez-vous
     </li>
@@ -21,11 +25,11 @@
                     nzTheme="outline"></span>S'enregistrer</button>
         </li>
         <li *ngIf="(isLoggedIn | async)" nz-menu-item>
-            <button routerLink="/" nz-button nzType="primary"><span nz-icon
-                    nzType="user" nzTheme="outline"></span>{{ currentUser }}</button>
+            <button routerLink="/profile" nz-button nzType="primary"><span nz-icon nzType="user" nzTheme="outline"></span>{{
+                currentUser.name }}</button>
         </li>
         <li *ngIf="(isLoggedIn | async)" nz-menu-item>
-            <button routerLink="/login" nz-button nzType="primary" (click)="authService.logout()"><span nz-icon
+            <button routerLink="/login" nz-button nzType="primary" (click)="logout()"><span nz-icon
                     nzType="user" nzTheme="outline"></span>Se deconnecter</button>
         </li>
     </div>

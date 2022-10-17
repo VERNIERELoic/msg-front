@@ -8,7 +8,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -30,10 +30,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { ContactComponent } from './pages/contact/contact.component';
-import { ExploreComponent } from './pages/explore/explore.component';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { PlanningComponent } from './pages/planning/planning.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { UserComponent } from './pages/user/user.component';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptors';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 
 
@@ -48,7 +53,10 @@ registerLocaleData(en);
     LoginComponent,
     RegisterComponent,
     ContactComponent,
-    ExploreComponent,
+    PlanningComponent,
+    AdminComponent,
+    UserComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,8 +81,11 @@ registerLocaleData(en);
     NzCarouselModule,
     NzCommentModule,
     NzNotificationModule,
+    NzImageModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

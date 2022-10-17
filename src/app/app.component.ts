@@ -13,6 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   scrollContent!: ElementRef;
 
   scroll;
+  title: any;
 
   constructor() {
   }
