@@ -8,7 +8,7 @@
 }
 
 [nz-carousel-content] {
-    object-fit: fill;
+
     height: 500px;
     width: auto;
     float: center;
@@ -16,15 +16,20 @@
     background: #1890ff;
     color: #fff;
     overflow: hidden;
+
+    img {
+        width: 100%;
+    }
 }
 
 nz-carousel {
     padding-top: 10px;
     width: 70%;
-    display: block;
     margin-right: auto;
     margin-left: auto;
 }
+
+
 
 h3 {
     color: #fff;
