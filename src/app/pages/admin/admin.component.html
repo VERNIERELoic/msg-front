@@ -1,8 +1,46 @@
 <app-header></app-header>
-<h1 class="title">Page d'administration</h1>
-<div class="today">
-    <h2>Rendez-vous du jour</h2>
+<div class="content">
+    <h1 class="title">Console d'administration</h1>
+    <nz-tabset class="menu-admin">
+        <nz-tab nzTitle="Planning">
+            <nz-calendar class="planning" [nzDisabledDate]="checkpassdate" (nzSelectChange)="select($event);showModal()"
+                [(ngModel)]="date" [(nzMode)]="mode" (nzPanelChange)="panelChange($event)"></nz-calendar>
+            <nz-modal [(nzVisible)]=" isVisible" nzTitle="Declarer mes disponibilités" (nzOnCancel)="handleCancel()"
+                (nzOnOk)="handleOk()">
+                <ng-container *nzModalContent>
+                </ng-container>
+            </nz-modal>
+        </nz-tab>
+        <nz-tab nzTitle="Utilisateurs">
+            <div class="search">
+                <div class="bar">
+                    <h3>rechercher un utilisateur</h3>
+                    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+                        <input type="text" nz-input placeholder="rechercher par nom d'utilisateur" />
+                    </nz-input-group>
+                    <ng-template #suffixIconButton>
+                        <button nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
+                    </ng-template>
+                </div>
+                <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+                    <nz-list-header>Resultat de la recherche</nz-list-header>
+                    <li nz-list-item *ngFor="let item of data" nzNoFlex>
+                        <ul nz-list-item-actions>
+                            <nz-list-item-action>
+                                <div class="action">
+                                    <label nz-checkbox [(ngModel)]="isAdmin">admin</label>
+                                    <button nz-button nzType="primary" nzDanger><span nz-icon nzType="delete"
+                                            nzTheme="outline"></span></button>
+                                </div>
+                            </nz-list-item-action>
+                        </ul>
+                        {{ item }}
+                    </li>
+                    <nz-list-footer>Footer</nz-list-footer>
+                </ul>
+            </div>
+        </nz-tab>
+        <nz-tab nzTitle="Messages">Content of Tab Pane 3</nz-tab>
+    </nz-tabset>
 </div>
-<nz-footer>
-    <app-footer></app-footer>
-</nz-footer>
+<app-footer></app-footer>
