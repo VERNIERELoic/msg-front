@@ -1,20 +1,22 @@
 <app-header></app-header>
+<h1 class="title">Mon compte</h1>
 <form nz-form [formGroup]="validateForm">
+    <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email">E-mail</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Email invalide!">
             <input nz-input formControlName="email" id="email" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Mot de passe</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password">Mot de passe</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
             <input nz-input type="password" id="password" formControlName="password"
                 (ngModelChange)="updateConfirmValidator()" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired>Confirmer</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword">Confirmer</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
             <input nz-input type="password" formControlName="checkPassword" id="checkPassword" />
             <ng-template #errorTpl let-control>
@@ -26,15 +28,15 @@
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname" nzRequired nzTooltipTitle="Votre prenom">
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname">
             <span>Prénom</span>
         </nz-form-label>
-        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Merci d'entrer votre prenom!">
+        <nz-form-control [nzSm]="14" [nzXs]="24">
             <input nz-input id="nickname" formControlName="name" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired>Téléphone</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone">Téléphone</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phone']"
             nzErrorTip="Please input your phone number!">
 
@@ -44,9 +46,7 @@
     </nz-form-item>
     <nz-form-item nz-row class="register-area">
         <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <button nz-button nzType="primary" type="submit" (click)="register()" nzShape="round">Créer mon
-                compte</button>
+            <button nz-button nzType="primary" type="submit" (click)="register()">modifier</button>
         </nz-form-control>
     </nz-form-item>
-</form>
-<app-footer></app-footer>
+    <app-footer></app-footer>

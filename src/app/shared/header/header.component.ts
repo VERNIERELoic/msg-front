@@ -13,16 +13,16 @@ export class HeaderComponent implements OnInit {
 
   isLoggedIn: Observable<boolean>;
   currentUser: any;
+  isAdmin: any;
 
   constructor(public authService: AuthService, public router: Router, public notificationService: NzNotificationService) {
     this.isLoggedIn = authService.isLoggedIn();
   }
 
-
   async ngOnInit() {
     this.currentUser = await firstValueFrom(this.authService.current())
     this.authService.currentUser.subscribe(user => {
-      console.log(user);
+      // this.isAdmin = user.value.isAdmin
     })
   }
 

@@ -1,4 +1,7 @@
 <ul nz-menu nzMode="horizontal">
+    <li class="logoli" routerLink="/" nz-menu-item>
+        <img class="logo" src="../../../assets/images/logo.svg">
+    </li>
     <li routerLink="/" nz-menu-item>
         <span nz-icon nzType="home" nzTheme="outline"></span>
         Accueil
@@ -17,20 +20,21 @@
     </li>
     <div class="user">
         <li *ngIf="!(isLoggedIn | async)" nz-menu-item>
-            <button routerLink="/login" nz-button nzType="primary"><span nz-icon nzType="user"
+            <button routerLink="/login" nz-button nzType="primary" nzShape="round"><span nz-icon nzType="login"
                     nzTheme="outline"></span>Se connecter</button>
         </li>
         <li *ngIf="!(isLoggedIn | async)" nz-menu-item>
-            <button routerLink="/register" nz-button nzType="primary"><span nz-icon nzType="user-add"
+            <button routerLink="/register" nz-button nzType="primary" nzShape="round"><span nz-icon nzType="user-add"
                     nzTheme="outline"></span>S'enregistrer</button>
         </li>
         <li *ngIf="(isLoggedIn | async)" nz-menu-item>
-            <button routerLink="/profile" nz-button nzType="primary"><span nz-icon nzType="user" nzTheme="outline"></span>{{
+            <button routerLink="/profile" nz-button nzType="primary" nzShape="round"><span nz-icon nzType="user"
+                    nzTheme="outline"></span>{{
                 currentUser.name }}</button>
         </li>
         <li *ngIf="(isLoggedIn | async)" nz-menu-item>
-            <button routerLink="/login" nz-button nzType="primary" (click)="logout()"><span nz-icon
-                    nzType="user" nzTheme="outline"></span>Se deconnecter</button>
+            <button routerLink="/login" nz-button nzType="primary" (click)="logout()" nzShape="round"><span nz-icon
+                    nzType="logout" nzTheme="outline"></span>Se deconnecter</button>
         </li>
     </div>
 </ul>

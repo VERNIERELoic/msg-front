@@ -17,7 +17,6 @@ export class JwtInterceptor implements HttpInterceptor {
 
     let headersConfig: any = {};
     const token = this.userService.getToken();
-    console.log(token)
     if (token) {
       headersConfig['Authorization'] = `Bearer ${token}`;
       headersConfig['X-Requested-With'] = `XMLHttpRequest`;

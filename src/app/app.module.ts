@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { fr_FR, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -39,6 +39,19 @@ import { UserComponent } from './pages/user/user.component';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptors';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzCalendarModule } from 'ng-zorro-antd/calendar';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
+
+
 
 
 
@@ -57,6 +70,7 @@ registerLocaleData(en);
     AdminComponent,
     UserComponent,
     ProfileComponent,
+    PlanningComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,9 +96,19 @@ registerLocaleData(en);
     NzCommentModule,
     NzNotificationModule,
     NzImageModule,
+    NzUploadModule,
+    NzDatePickerModule,
+    NzCalendarModule,
+    NzAvatarModule,
+    NzModalModule,
+    NzTabsModule,
+    NzListModule,
+    NzCheckboxModule,
+    Ng2SearchPipeModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
+    { provide: LOCALE_ID, useValue: fr_FR },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

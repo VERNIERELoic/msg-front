@@ -16,25 +16,29 @@
                 <div class="bar">
                     <h3>rechercher un utilisateur</h3>
                     <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
-                        <input type="text" nz-input placeholder="rechercher par nom d'utilisateur" />
+                        <input type="text" nz-input [(ngModel)]="searchText"
+                            placeholder="rechercher par nom d'utilisateur" />
                     </nz-input-group>
+                    <!-- *ngFor="let country of countries | searchFilter: searchTerm; index as i" -->
                     <ng-template #suffixIconButton>
                         <button nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
                     </ng-template>
                 </div>
                 <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
                     <nz-list-header>Resultat de la recherche</nz-list-header>
-                    <li nz-list-item *ngFor="let item of data" nzNoFlex>
+                    <li nz-list-item nzNoFlex *ngFor=" let  item of data | filter:searchText">
+                        <!-- *ngFor="let item of data" -->
                         <ul nz-list-item-actions>
                             <nz-list-item-action>
                                 <div class="action">
-                                    <label nz-checkbox [(ngModel)]="isAdmin">admin</label>
-                                    <button nz-button nzType="primary" nzDanger><span nz-icon nzType="delete"
-                                            nzTheme="outline"></span></button>
+                                    <label nz-checkbox [(ngModel)]="item.admin"
+                                        (nzOnChange)="removeAdmin(item.email)">admin</label>
+                                    <button nz-button nzType="primary" nzDanger (click)="dropUSer(item.email)"><span
+                                            nz-icon nzType="delete" nzTheme="outline"></span></button>
                                 </div>
                             </nz-list-item-action>
                         </ul>
-                        {{ item }}
+                        {{ item.name }} | {{ item.email }}
                     </li>
                     <nz-list-footer>Footer</nz-list-footer>
                 </ul>

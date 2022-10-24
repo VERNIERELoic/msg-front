@@ -10,10 +10,23 @@
 }
 
 @font-face {
-    font-family: "opensens";
-    src: url(assets/fonts/OpenSans.ttf);
+    font-family: "Odudo";
+    src: url(assets/fonts/Odudo-Regular.otf);
 }
 
 * {
-    font-family: "opensens";
+    font-family: "Odudo";
 }
+
+button {
+    background: linear-gradient(120deg, #0084ff, #FFFFFF);
+}
+
+// @font-face {
+//     font-family: "opensens";
+//     src: url(assets/fonts/OpenSans.ttf);
+// }
+
+// * {
+//     font-family: "opensens";
+// }

@@ -1,0 +1,36 @@
+[nz-form] {
+    max-width: 600px;
+}
+
+img {
+    margin-bottom: 50px;
+}
+
+nz-avatar {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
+
+.phone-select {
+    width: 70px;
+}
+
+.register-are {
+    margin-bottom: 8px;
+}
+
+form {
+    padding-top: 1%;
+    margin: 0 auto;
+}
+
+.title {
+    padding-top: 2%;
+    text-align: center;
+}
+
+:host ::ng-deep .avatar-uploader>.ant-upload {
+    width: 128px;
+    height: 128px;
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { NzCalendarMode } from 'ng-zorro-antd/calendar';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { firstValueFrom } from 'rxjs';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-admin',
@@ -13,10 +15,32 @@ export class AdminComponent implements OnInit {
   mode: NzCalendarMode = 'month';
   isVisible = false;
   isAdmin = false;
+  data: any[] = [];
+  searchText;
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.data = await firstValueFrom(this.userService.getAllUsers());
+    console.log(this.data);
+  }
+
+  removeAdmin(email: any){
+    this.userService.removeAdmin(email)
+  }
+
+  dropUser(email): any {
+    this.userService.dropUser(email)
+  }
+
+  search(value: string): void {
+    this.data = this.data.filter((val) =>
+      val.name.toLowerCase().includes(value)
+    );
+  }
+
+  dropUSer(email: any): any {
+    this.userService.dropUser(email);
   }
 
   panelChange(change: { date: Date; mode: string }): void {
@@ -46,13 +70,4 @@ export class AdminComponent implements OnInit {
     console.log('Button cancel clicked!');
     this.isVisible = false;
   }
-
-  data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.'
-  ];
-
 }

@@ -1,7 +1,36 @@
 <app-header></app-header>
+<div class="content">
+    <div nz-row>
+        <div nz-col nzSpan="17">
+            <nz-calendar [nzDisabledDate]="checkpassdate" (nzSelectChange)="select($event)" [(ngModel)]="date"
+                [(nzMode)]="mode" (nzPanelChange)="panelChange($event)"></nz-calendar>
+        </div>
+        <div nz-col nzSpan="6">
+            <div class="time">
+                <h2>Horaires disponibles</h2>
+                <div nz-row>
+                    <div nz-col nzSpan="8">
+                        <div class="barber1">
+                            <h2>Yass</h2>
+                            <button nz-button nzType="primary">12:30</button>
+                        </div>
+                    </div>
+                    <div nz-col nzSpan="8">
+                        <div class="barber2">
+                            <h2>Barber2</h2>
+                            <button nz-button nzType="primary">12:30</button>
+                        </div>
+                    </div>
+                    <div nz-col nzSpan="8">
+                        <div class="barber3">
+                            <h2>Barber3</h2>
+                            <button nz-button nzType="primary">12:30</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-
-<nz-footer>
-    <app-footer></app-footer>
-</nz-footer>
+<app-footer></app-footer>
