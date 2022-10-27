@@ -48,6 +48,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 
 
@@ -105,6 +106,7 @@ registerLocaleData(en);
     NzListModule,
     NzCheckboxModule,
     Ng2SearchPipeModule,
+    NzMessageModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

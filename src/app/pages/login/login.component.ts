@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
@@ -17,8 +18,7 @@ export class LoginComponent implements OnInit {
     private router: Router, private notificationService: NzNotificationService) { }
 
   async login() {
-    await this.authService.login(this.validateForm.value)
-      .toPromise()
+    await firstValueFrom(this.authService.login(this.validateForm.value))
       .then(() => {
         this.router.navigate(['/']);
         this.notificationService.success("Succès", "Connecté");

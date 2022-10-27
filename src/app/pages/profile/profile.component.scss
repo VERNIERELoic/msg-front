@@ -12,6 +12,18 @@ nz-avatar {
     margin-bottom: 2%;
 }
 
+nz-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+:host ::ng-deep .avatar-uploader>.ant-upload {
+    width: 128px;
+    height: 128px;
+}
+
 .phone-select {
     width: 70px;
 }

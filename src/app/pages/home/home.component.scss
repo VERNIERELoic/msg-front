@@ -1,3 +1,9 @@
+.title{
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
 .logo {
     padding-top: 10px;
     display: block;
@@ -16,9 +22,11 @@
     background: #1890ff;
     color: #fff;
     overflow: hidden;
+    border-radius: 10px;
 
     img {
         width: 100%;
+        
     }
 }
 
@@ -27,6 +35,7 @@ nz-carousel {
     width: 70%;
     margin-right: auto;
     margin-left: auto;
+    border-radius: 10px
 }
 
 

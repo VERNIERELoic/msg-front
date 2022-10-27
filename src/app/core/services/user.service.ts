@@ -12,19 +12,27 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUsers() :any{
-    console.log("list des users :")
+  getAllUsers(): any {
     return this.http.get(`${environment.apiUrl}/getallusers`);
   }
-  getUser(username: any): any {
-    return this.http.get(`${environment.apiUrl}/getuser`, username);
+
+  getUserById(id: any): any {
+    return this.http.get(`${environment.apiUrl}/getuser/${id}`);
   }
 
-  dropUser(email: any): any{
-    return this.http.post(`${environment.apiUrl}/dropuser`, email);
+  updateUser(user: any): any {
+    return this.http.post(`${environment.apiUrl}/updateuser`, user);
   }
 
-  removeAdmin(email: any): any{
-    return this.http.post(`${environment.apiUrl}/removeadmin`, email);
+  removeUser(id: any): any {
+    return this.http.delete(`${environment.apiUrl}/removeuser/${id}`);
+  }
+
+  removeAdmin(id: any): any {
+    return this.http.put(`${environment.apiUrl}/removeadmin`, id);
+  }
+
+  addAdmin(id: any): any {
+    return this.http.put(`${environment.apiUrl}/addadmin`, id);
   }
 }

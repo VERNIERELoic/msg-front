@@ -26,7 +26,6 @@ export class AuthService {
   login(credentials: any): any {
     return this.http.post(`${environment.apiUrl}/login`, credentials).pipe(
       map((res: any) => {
-        console.log(res)
         localStorage.setItem('token', res.authorisation.token);
         this.isLoginSubject.next(true);
       }),

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  images = ["./assets/images/carous1.jpeg", "image 2", "image 3", "image 4"];
+  images = ["./assets/images/indoor.png", "./assets/images/outdoor.png"];
 
   team = [
     ["Yass", "./assets/images/barberprofile.jpg", "description "],

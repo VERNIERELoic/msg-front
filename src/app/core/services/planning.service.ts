@@ -15,4 +15,7 @@ export class PlanningService {
     return this.http.get(`${environment.apiUrl}/timetable`);
   }
 
+  getSchedulesAt(start_date: any): any{
+    return this.http.get(`${environment.apiUrl}/getschedulesat`, start_date);
+  }
 }

@@ -10,6 +10,7 @@ export class PlanningComponent implements OnInit {
 
   date = new Date();
   mode: NzCalendarMode = 'month';
+  tabs = ['yass', 'Loïc', 'Sifo'];
 
   constructor() { }
 
